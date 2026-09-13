@@ -1,0 +1,40 @@
+# =========================
+# Environment / Secrets
+# =========================
+.env
+.env.*
+!.env.example
+
+# =========================
+# React / Node
+# =========================
+frontend/node_modules/
+frontend/dist/
+frontend/.env
+
+# =========================
+# Java / Spring Boot
+# =========================
+backend/target/
+backend/.idea/
+backend/*.iml
+
+# =========================
+# Python
+# =========================
+ai-service/.venv/
+ai-service/venv/
+ai-service/__pycache__/
+ai-service/*.pyc
+
+# =========================
+# IDE
+# =========================
+.idea/
+.vscode/
+
+# =========================
+# OS
+# =========================
+.DS_Store
+Thumbs.db

@@ -35,7 +35,7 @@ async def chat_with_ai(request:Request):
     completion  = await client.chat.completions.create(
         model="openai/gpt-oss-120b",
         messages=[
-            {"role":"system","content":"you are a helpful chat bot "},
+            {"role":"system","content":"you are a helpful chat bots "},
             {"role":"user","content":user_query}
         ],
         temperature=0.7,

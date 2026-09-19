@@ -1,10 +1,17 @@
 from fastapi import FastAPI,Request,HTTPException
 from groq import AsyncGroq
+from dotenv import load_dotenv
+import os
 
+load_dotenv()
 
 app = FastAPI()
 
-client  = AsyncGroq(api_key="")
+groq_api_key = os.getenv("GROQ_API_KEY")
+if not groq_api_key:
+    raise RuntimeError("GROQ_API_KEY is not set. Add it to ai-service/ChatBotPythonService/.env")
+
+client = AsyncGroq(api_key=groq_api_key)
 
 
 @app.get("/api/ai/models")

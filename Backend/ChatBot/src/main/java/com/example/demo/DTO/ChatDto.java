@@ -2,8 +2,16 @@ package com.example.demo.DTO;
 
 public class ChatDto {
 	private Long chatId;
+	private Long userId;
 	private String sender;
 	private String message;
+	
+	public Long getUserId() {
+		return userId;
+	}
+	public void setUserId(Long userId) {
+		this.userId = userId;
+	}
 	public Long getChatId() {
 		return chatId;
 	}

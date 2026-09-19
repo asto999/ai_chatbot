@@ -1,9 +1,12 @@
 package com.example.demo.Entity;
 
+import java.util.List;
+
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.OneToMany;
 
 @Entity
 public class User {
@@ -12,6 +15,9 @@ public class User {
 	private long id;
 	private String email;
 	private String password;
+	@OneToMany(mappedBy = "user",orphanRemoval = true,cascade = jakarta.persistence.CascadeType.ALL,fetch = jakarta.persistence.FetchType.LAZY)
+	private List<Conversation> conversations;
+	
 	public long getId() {
 		return id;
 	}
@@ -29,6 +35,13 @@ public class User {
 	}
 	public void setPassword(String password) {
 		this.password = password;
+	}
+	
+	public List<Conversation> getConversations() {
+		return conversations;
+	}
+	public void setConversations(List<Conversation> conversations) {
+		this.conversations = conversations;
 	}
 	public User(long id, String email, String password) {
 		super();

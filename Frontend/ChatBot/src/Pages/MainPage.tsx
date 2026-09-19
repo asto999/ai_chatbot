@@ -3,6 +3,7 @@ import { useState } from "react";
 const MainPage =()=>{
     const[message,setMessage] = useState("");
     const [reply,setReply] = useState("");
+    const [history,setHistory] = useState([]);
     const handleMessage = async (e: { preventDefault: () => void; }) => {
         e.preventDefault();
         
@@ -29,6 +30,11 @@ const MainPage =()=>{
     return (
 <div>
     main page
+    <div>{
+        history.map((item,index)=>(
+            <p>{item}</p>
+        ))
+        }</div>
     <h1>{reply}</h1>
     <input placeholder="type..." onChange={(e) => setMessage(e.target.value)} />
 
